@@ -1,2 +1,2 @@
 # roadMapC
-Studing C
+Studing basic C
