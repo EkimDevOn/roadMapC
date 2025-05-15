@@ -1,0 +1,432 @@
+
+
+
+
+
+A função printf em C é uma das maneiras mais comuns de exibir mensagens e dados na tela. Ela é parte da biblioteca padrão de 
+entrada e saída (stdio.h) e permite formatar e imprimir dados de várias maneiras.
+Inclusão da Biblioteca
+Antes de usar printf, você precisa incluir a biblioteca stdio.h no seu programa:
+
+#include <stdio.h>
+
+Sintaxe Básica do printf
+A função printf segue a seguinte sintaxe:
+
+printf(formato, argumentos;)
+
+formato: Uma string que especifica o formato dos dados a serem impressos. Pode conter texto literal e especificadores de formato.
+
+
+
+Especificadores de Formato
+Os especificadores de formato começam com um % e determinam como os dados serão impressos. Aqui estão alguns dos mais comuns:
+
+%d ou %i: Número inteiro.
+
+%f: Número de ponto flutuante.
+
+%c: Caractere.
+
+%s: String.
+
+%p: Endereço de memória (ponteiro).
+
+%x ou %X: Número hexadecimal.
+
+%o: Número octal.
+
+
+Exemplos de Uso do printf
+Imprimindo Texto Literal
+
+#include <stdio.h>
+
+int main() {
+    printf("Olá!\n");
+    return0;
+}
+
+Isso imprimirá:
+
+Olá!
+
+
+Imprimindo Variáveis
+
+include <stdio.h>
+
+int main(){
+    int idade = 25;
+    float altura = 1.89;
+    char inicial = 'H';
+
+    printf("%d\n", idade);
+    printf("%f\n", altura);
+    printf("%c\n", inicial)
+
+    return 0;
+}
+
+Isso imprimirá:
+
+Idade: 25
+Altura: 1.75
+Inicial: J
+
+
+
+    
+    Imprimindo Strings
+
+
+#include <stdio.h>
+#include <windows.h>
+
+int main() {
+    SetConsoleOutputCP(CP_UTF8);
+
+    char nome[] = "João";
+    char sobrenome[] = "Guilherme";
+
+    printf("%s\n", nome);
+    printf("%s\n", sobrenome);
+
+    return 0;
+}
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+                    Imprimindo Endereços de Memória
+
+#include <stdio.h>
+
+int main() {
+    int valor = 10;
+    int *ponteiro = &valor;
+
+    printf("Valor: %d\n", valor);
+    printf("Endereço de 'valor': %p\n", &valor);
+    printf("Valor do ponteiro: %p\n", ponteiro);
+    printf("Valor apontado pelo ponteiro: %d\n", *ponteiro);
+
+    return 0;
+}
+
+
+Isso imprimirá algo como:
+
+Valor: 10
+Endereço de 'valor': 0x7ffee3f4
+Valor do ponteiro: 0x7ffee3f4
+Valor apontado pelo ponteiro: 10
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+                                Imprimindo Números Hexadecimais e Octais
+
+#include <stdio.h>
+
+int main() {
+    int numero = 255;
+
+    printf("Decimal: %d\n", numero);
+    printf("Hexadecimal: %x\n", numero);
+    printf("Octal: %o\n", numero);
+
+    return 0;
+}
+
+Isso imprimirá:
+
+Decimal: 255
+Hexadecimal: ff
+Octal: 377
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+                Formatação Avançada
+
+Você também pode controlar a largura, precisão e alinhamento dos dados impressos.
+Largura de Campo
+
+#include <stdio.h>
+
+int main() {
+    int numero = 123;
+
+    printf("Número com largura de campo 5: %5d\n", numero);
+    printf("Número com largura de campo 5 e alinhamento à esquerda: %-5d\n", numero);
+
+    return 0;
+}
+
+Isso imprimirá:
+
+Número com largura de campo 5:    123
+Número com largura de campo 5 e alinhamento à esquerda: 123   
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    
+                    Precisão
+
+#include <stdio.h>
+
+int main() {
+    float pi = 3.141592653589793;
+
+    printf("Pi com 2 casas decimais: %.2f\n", pi);
+    printf("Pi com 5 casas decimais: %.5f\n", pi);
+
+    return 0;
+}
+
+Isso imprimirá:
+
+
+Pi com 2 casas decimais: 3.14
+Pi com 5 casas decimais: 3.14159
+
+
+            Conclusão
+
+A função printf é muito poderosa e flexível, permitindo que você imprima dados de várias maneiras. Com os especificadores de formato e opções de formatação,
+ você pode controlar exatamente como os dados serão apresentados.
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+                Sequência de escape PRINTF()
+
+
+C são caracteres especiais que começam com uma barra invertida (\) e são usadas para representar caracteres que não podem ser facilmente
+ digitados ou que têm um significado especial. No contexto da função printf, essas sequências de escape são usadas para formatar a saída de texto.
+
+Aqui estão algumas sequências de escape comuns e seus usos:
+
+Sequências de Escape Comuns
+
+\n: Nova linha
+Move o cursor para a próxima linha.
+
+Exemplo: printf("Olá\nMundo!"); imprime:
+
+Olá
+Mundo!
+
+
+\t: Tabulação horizontal
+Move o cursor para a próxima tabulação.
+
+Exemplo: printf("Coluna 1\tColuna 2"); imprime:
+
+Coluna 1    Coluna 2
+
+\r: Retorno de carro
+Move o cursor para o início da linha atual.
+
+Exemplo: printf("Texto inicial\rTexto substituído"); imprime:
+
+Texto substituído
+
+\b: Backspace
+Move o cursor uma posição para trás.
+Exemplo: printf("Tecla backspace\b"); imprime:
+Tecla backspace
+
+\f: Form feed
+Avança a página (usado em impressoras).
+Exemplo: printf("Nova página\f"); (geralmente não visível
+ no terminal).
+
+\v: Tabulação vertical
+Move o cursor para a próxima tabulação vertical.
+Exemplo: printf("Linha 1\vLinha 2"); (geralmente não visível no terminal).
+
+\\: Barra invertida
+Imprime uma barra invertida.
+Exemplo: printf("Barra invertida: \\"); imprime:
+Barra invertida: \
+
+\': Aspas simples
+Imprime uma aspa simples.
+Exemplo: printf("Aspa simples: \'"); imprime:
+Aspa simples: '
+
+\": Aspas duplas
+Imprime uma aspa dupla.
+Exemplo: printf("Aspa dupla: \""); imprime:
+Aspa dupla: "
+
+\?: Interrogação
+Imprime um caractere de interrogação.
+Exemplo: printf("Interrogação: \?"); imprime:
+Interrogação: ?
+
+\a: Alerta (campainha)
+Gera um sinal de alerta (geralmente um bip).
+Exemplo: printf("Alerta: \a"); (geralmente não visível no terminal).
+
+
+Exemplo Completo
+Aqui está um exemplo que demonstra várias sequências de escape:
+
+#include <stdio.h>
+
+int main() {
+    printf("Nova linha: \n");
+    printf("Tabulação horizontal: \t");
+    printf("Retorno de carro: \r");
+    printf("Backspace: \b");
+    printf("Form feed: \f");
+    printf("Tabulação vertical: \v");
+    printf("Barra invertida: \\\\");
+    printf("Aspa simples: \'");
+    printf("Aspa dupla: \"");
+    printf("Interrogação: \?");
+    printf("Alerta: \a");
+
+    return 0;
+}
+
+Uso Prático:
+
+Sequências de escape são úteis para formatar a saída de texto de maneira mais legível e controlar o layout da saída. Por exemplo,
+ você pode usar \n para criar linhas separadas ou \t para alinhar colunas de dados.
+
+Conclusão
+As sequências de escape em C permitem que você insira caracteres especiais e controle o formato da saída de texto.
+ Elas são especialmente úteis quando você precisa incluir caracteres que não podem ser facilmente digitados ou que 
+ têm um significado especial na linguagem.
+
+
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+                     Scanf()
+
+
+A função scanf em C.
+
+scanf(<form.>, &<v1>, &<v2>, ... &<vn>);
+
+O que é scanf?
+
+A função scanf é usada para ler dados de entrada do usuário (geralmente do teclado) e armazená-los em variáveis.
+ Ela é parte da biblioteca padrão de entrada e saída (stdio.h).
+Sintaxe Básica do scanf
+
+A sintaxe da função scanf é a seguinte:
+
+int scanf(const char *formato, ...);
+
+formato: Uma string que especifica o formato dos dados a serem lidos. Pode conter especificadores de formato.
+
+...: Um ou mais argumentos que são ponteiros para as variáveis onde os dados lidos serão armazenados.
+
+Especificadores de Formato
+
+Os especificadores de formato começam com um % e determinam o tipo de dado que será lido. Aqui estão alguns dos mais comuns:
+%d ou %i: Lê um número inteiro.
+%f: Lê um número de ponto flutuante.
+%c: Lê um caractere.
+%s: Lê uma string.
+%lf: Lê um número de ponto flutuante de precisão dupla (double).
+
+
+Exemplos de Uso do scanf
+
+Lendo um Número Inteiro
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+
+    printf("Você digitou: %d\n", numero);
+
+    return 0;
+}
+
+
+
+Lendo um Número de Ponto Flutuante
+
+#include <stdio.h>
+
+int main() {
+    float numero;
+
+    printf("Digite um número de ponto flutuante: ");
+    scanf("%f", &numero);
+
+    printf("Você digitou: %.2f\n", numero);
+
+    return 0;
+}
+
+
+
+Lendo uma String
+
+#include <stdio.h>
+
+int main() {
+    char nome[50];
+
+    printf("Digite seu nome: ");
+    scanf("%s", nome);
+
+    printf("Olá, %s!\n", nome);
+
+    return 0;
+}
+
+
+
+Lendo Vários Dados
+
+#include <stdio.h>
+
+int main() {
+    int idade;
+    float altura;
+    char nome[50];
+
+    printf("Digite seu nome: ");
+    scanf("%s", nome);
+
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+
+    printf("Digite sua altura: ");
+    scanf("%f", &altura);
+
+    printf("Nome: %s, Idade: %d, Altura: %.2f\n", nome, idade, altura);
+
+    return 0;
+}
+
+
+
+Dicas Importantes
+Usar & com Variáveis: Quando você lê um número inteiro ou de ponto flutuante, use o operador & para passar o endereço da variável. Por exemplo,
+ scanf("%d", &numero);.
+
+Limpar o Buffer de Entrada: Depois de ler um número, o caractere de nova linha (\n) pode permanecer no buffer de entrada.
+ Isso pode causar problemas ao ler strings. Você pode limpar o buffer usando getchar():
+
+
+getchar(); // Limpa o buffer de entrada
+
+Limitar o Tamanho da String: Ao ler strings, é bom limitar o tamanho para evitar buffer overflow. Por exemplo, scanf("%49s", nome);
+ para uma string de tamanho máximo 50.
+
+Conclusão
+A função scanf é uma ferramenta poderosa para ler dados de entrada do usuário em C.
+ Com os especificadores de formato e as dicas mencionadas, você pode ler e armazenar dados de maneira eficiente e segura.

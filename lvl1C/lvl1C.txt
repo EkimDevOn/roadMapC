@@ -1,0 +1,257 @@
+
+ Escreva e Execute o Seu Código
+Crie um arquivo .c no seu projeto, por exemplo, main.c.
+Escreva o seu código C no arquivo, por exemplo:
+
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+
+
+Pressione F5 para compilar e executar o seu programa. O VSCode irá compilar o código usando o GCC e executar o programa.
+Comando Alternativo para Compilar e Executar
+
+
+Se você preferir compilar e executar o código manualmente, você pode abrir o Terminal no VSCode e usar os seguintes comandos:
+
+
+gcc -o a.out main.c
+./a.out
+
+
+Isso irá compilar o arquivo main.c e criar um executável chamado a.out, que você pode executar diretamente.
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+//PORÉM EU JA INSTALEI EXTENSOES QUE COMPILAR E EXECUTAM AUTOMATICAMENTE - ENTAO SO USAR BOTAO DIREITO DO MOUSE E "RUN CODE"
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+No Windows
+Baixe e instale o MinGW (Minimalist GNU for Windows):
+
+Acesse o site MinGW e baixe o instalador.
+
+Execute o instalador e selecione as opções padrão.
+
+Certifique-se de incluir o diretório de instalação do MinGW no seu PATH (geralmente C:\MinGW\bin).
+
+Verifique a instalação:
+
+Abra o Prompt de Comando e digite gcc --version. Se estiver instalado corretamente, você verá a versão do GCC.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Compilar o Programa
+
+Abra um terminal ou prompt de comando e navegue até o diretório onde você salvou o arquivo ola_mundo.c.
+
+Compilar o programa
+
+Use o seguinte comando para compilar o programa:
+
+
+gcc -o ola_mundo ola_mundo.c
+
+gcc é o compilador.
+
+-o ola_mundo especifica o nome do executável de saída (no caso, ola_mundo).
+
+ola_mundo.c é o arquivo de código-fonte.
+
+Se tudo estiver correto, você não verá mensagens de erro, e um arquivo executável chamado ola_mundo será criado no mesmo diretório.
+
+4. Executar o Programa
+
+Para executar o programa, use o seguinte comando no terminal ou prompt de comando:
+
+No Windows
+
+
+.\ola_mundo.exe
+
+No Linux e macOS
+
+./ola_mundo
+
+Se tudo estiver funcionando corretamente, você verá a mensagem "Olá, mundo!" impressa no terminal.
+
+Resumo
+
+Escreva o código em um arquivo .c.
+Instale o GCC (ou outro compilador C).
+Compile o programa usando gcc -o nome_executavel nome_arquivo.c.
+Execute o programa usando ./nome_executavel.
+
+O MEU-        if ($?) { gcc main.c -o main } ; if ($?) { .\main }
+
+//////////////////////////////////////////////////////////////////
+
+                                  
+                                  Estrutura Sequencil
+
+
+Estrutura Sequencial
+
+A estrutura sequencial é a forma mais básica de organização de um programa. Nela, as instruções são executadas uma após a outra,
+ na ordem em que aparecem no código.
+
+ Não há controle de fluxo (como if, for, while), apenas uma sequência linear de comandos.
+
+Exemplo de Estrutura Sequencial
+
+Vamos criar um programa simples que calcula a área de um retângulo e imprime o resultado.
+
+#include <stdio.h>
+
+int main() {
+    float base, altura, area;
+
+    // Solicita ao usuário que insira a base e a altura
+    printf("Digite a base do retângulo: ");
+    scanf("%f", &base);
+
+    printf("Digite a altura do retângulo: ");
+    scanf("%f", &altura);
+
+    // Calcula a área
+    area = base * altura;
+
+    // Imprime o resultado
+    printf("A área do retângulo é: %.2f\n", area);
+
+    return 0;
+}
+
+Explicação:
+Inclusão de Bibliotecas: #include <stdio.h> permite o uso de funções de entrada e saída, como printf e scanf.
+
+Declaração de Variáveis: float base, altura, area; declara três variáveis do tipo float.
+
+Solicitação de Dados: printf imprime mensagens no terminal, e scanf lê os valores digitados pelo usuário.
+
+Cálculo da Área: area = base * altura; realiza a multiplicação.
+
+Impressão do Resultado: printf imprime a área com duas casas decimais.
+
+//////////////////////////////////////////////////////////////////////////////////
+
+                                                Debugando o Código em C
+
+
+Debugar um código significa encontrar e corrigir erros (bugs) no programa. Isso pode ser feito manualmente ou usando ferramentas específicas.
+ Vamos discutir algumas técnicas básicas e uma ferramenta comum chamada GDB (GNU Debugger).
+
+Técnicas de Debug Manual
+
+Leitura Atenta do Código: Verifique se as instruções estão na ordem correta e se as variáveis estão sendo usadas corretamente.
+
+Prints para Depuração: Use printf para imprimir valores de variáveis em pontos específicos do código. Isso ajuda a entender o estado do programa em cada momento.
+
+Exemplo de Debug Manual
+
+Suponha que o programa acima não está funcionando corretamente. Vamos adicionar alguns printf para depurar:
+
+#include <stdio.h>
+
+int main() {
+    float base, altura, area;
+
+    printf("Digite a base do retângulo: ");
+    scanf("%f", &base);
+    printf("Base lida: %.2f\n", base); // Debug
+
+    printf("Digite a altura do retângulo: ");
+    scanf("%f", &altura);
+    printf("Altura lida: %.2f\n", altura); // Debug
+
+    area = base * altura;
+    printf("Área calculada: %.2f\n", area); // Debug
+
+    printf("A área do retângulo é: %.2f\n", area);
+
+    return 0;
+}
+
+Usando o GDB
+
+O GDB é uma ferramenta poderosa para debugar programas em C. Aqui estão as etapas básicas para usar o GDB:
+
+Compilar com Opções de Debug:
+
+Compile o programa com a opção -g para incluir informações de debug no executável:
+
+
+gcc -g -o ola_mundo ola_mundo.c
+
+Iniciar o GDB:
+
+Execute o GDB com o nome do executável:
+
+
+gdb ./ola_mundo
+
+
+Comandos Básicos do GDB:
+
+run: Inicia a execução do programa.
+
+break: Define um ponto de parada (breakpoint) em uma linha específica. Por exemplo, break 10 para parar na linha 10.
+
+next: Executa a próxima linha de código.
+
+print: Imprime o valor de uma variável. Por exemplo, print base.
+
+continue: Continua a execução até o próximo breakpoint.
+
+quit: Sai do GDB.
+
+Exemplo de Uso do GDB
+
+Suponha que você queira debugar o programa de área do retângulo:
+
+
+Compilar com -g:
+
+gcc -g -o ola_mundo ola_mundo.c
+
+
+Iniciar o GDB:
+
+gdb ./ola_mundo
+
+
+Definir um Breakpoint:
+
+(gdb) break 10
+
+
+Iniciar a Execução:
+
+(gdb) run
+
+
+Examinar Variáveis:
+
+(gdb) print base
+(gdb) print altura
+
+
+Continuar a Execução:
+
+(gdb) continue
+
+
+Sair do GDB:
+
+(gdb) quit
+
+
+Conclusão
+
+Estrutura Sequencial: Execução linear de instruções.
+Debug Manual: Use printf para verificar valores de variáveis.
+Debug com GDB: Ferramenta poderosa para inspecionar e controlar a execução do programa.
