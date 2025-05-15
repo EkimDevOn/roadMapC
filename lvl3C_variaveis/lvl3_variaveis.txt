@@ -1,0 +1,114 @@
+
+
+                                                                Variáveis em C
+
+
+
+Uma variável em C é um local de armazenamento na memória que tem um nome e um tipo específico. O tipo determina o tipo de dados que a variável pode armazenar,
+ como números inteiros, números de ponto flutuante, caracteres, etc.
+Declaração de Variáveis
+Para usar uma variável em C, você precisa declará-la, especificando seu tipo e nome. Aqui estão alguns exemplos:
+
+int idade;       // Declara uma variável inteira chamada 'idade'
+float altura;    // Declara uma variável de ponto flutuante chamada 'altura'
+char letra;      // Declara uma variável caractere chamada 'letra'
+double peso;     // Declara uma variável de ponto flutuante de precisão dupla chamada 'peso'
+
+Atribuição de Dados
+A atribuição de dados em C é feita usando o operador =. O operador = é usado para atribuir um valor a uma variável. A sintaxe é a seguinte:
+
+variavel = valor;
+variavel: O nome da variável que receberá o valor.
+valor: O valor a ser atribuído à variável.
+
+Exemplos de Atribuição
+
+idade = 25;      // Atribui o valor 25 à variável 'idade'
+altura = 1.75;   // Atribui o valor 1.75 à variável 'altura'
+letra = 'A';     // Atribui o caractere 'A' à variável 'letra'
+peso = 70.5;     // Atribui o valor 70.5 à variável 'peso'
+
+Declaração e Inicialização Simultânea
+Você também pode declarar e inicializar uma variável em uma única linha:
+
+int idade = 25;       // Declara e inicializa 'idade' com 25
+float altura = 1.75;  // Declara e inicializa 'altura' com 1.75
+char letra = 'A';     // Declara e inicializa 'letra' com 'A'
+double peso = 70.5;   // Declara e inicializa 'peso' com 70.5
+
+Operador de Atribuição =
+O operador = é usado para atribuir um valor a uma variável. É importante notar que o operador = não é um operador de igualdade (para isso, você usa ==).
+
+Exemplo de Uso do Operador de Atribuição
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+
+    a = 10;  // Atribui o valor 10 à variável 'a'
+    b = 20;  // Atribui o valor 20 à variável 'b'
+    c = a + b;  // Atribui a soma de 'a' e 'b' à variável 'c'
+
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    printf("c = %d\n", c);
+
+    return 0;
+}
+Saída:
+
+a = 10
+b = 20
+c = 30
+
+
+Atribuição Composta
+
+C também suporta atribuição composta, que combina uma operação aritmética com a atribuição. Aqui estão alguns exemplos:
+
++=: Adiciona um valor à variável e atribui o resultado à variável.
+-=: Subtrai um valor da variável e atribui o resultado à variável.
+*=: Multiplica a variável por um valor e atribui o resultado à variável.
+/=: Divide a variável por um valor e atribui o resultado à variável.
+%=: Calcula o módulo da variável por um valor e atribui o resultado à variável.
+
+Exemplo de Atribuição Composta
+
+#include <stdio.h>
+
+int main() {
+    int x = 10;
+
+    x += 5;  // Equivalente a x = x + 5
+    printf("x = %d\n", x);  // Imprime 15
+
+    x -= 3;  // Equivalente a x = x - 3
+    printf("x = %d\n", x);  // Imprime 12
+
+    x *= 2;  // Equivalente a x = x * 2
+    printf("x = %d\n", x);  // Imprime 24
+
+    x /= 4;  // Equivalente a x = x / 4
+    printf("x = %d\n", x);  // Imprime 6
+
+    x %= 5;  // Equivalente a x = x % 5
+    printf("x = %d\n", x);  // Imprime 1
+
+    return 0;
+}
+
+Saída:
+
+x = 15
+x = 12
+x = 24
+x = 6
+x = 1
+
+Conclusão
+As variáveis em C são locais de armazenamento que podem armazenar valores de tipos específicos.
+ A atribuição de dados é feita usando o operador =, que atribui um valor a uma variável.
+  Você também pode usar operadores de atribuição composta para realizar operações aritméticas e atribuição em uma única linha.
+
+  
