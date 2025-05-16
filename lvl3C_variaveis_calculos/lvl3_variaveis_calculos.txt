@@ -111,4 +111,173 @@ As variáveis em C são locais de armazenamento que podem armazenar valores de t
  A atribuição de dados é feita usando o operador =, que atribui um valor a uma variável.
   Você também pode usar operadores de atribuição composta para realizar operações aritméticas e atribuição em uma única linha.
 
-  
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+                                               Aprenda a realizar cálculos em C
+
+
+
+Realizar cálculos em C é uma tarefa comum e fundamental. Você pode usar operadores aritméticos para realizar operações básicas como adição,
+ subtração, multiplicação, divisão e módulo. Vamos ver como fazer isso passo a passo.
+Operadores Aritméticos em C
+
+C possui vários operadores aritméticos que permitem realizar cálculos básicos:
+
++: Adição
+-: Subtração
+*: Multiplicação
+/: Divisão
+%: Módulo (resto da divisão)
+
+Exemplos de Cálculos
+
+1. Adição
+
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 20;
+    int soma = a + b;
+
+    printf("A soma de %d e %d é %d\n", a, b, soma);
+
+    return 0;
+}
+
+2. Subtração
+
+#include <stdio.h>
+
+int main() {
+    int a = 20;
+    int b = 10;
+    int diferenca = a - b;
+
+    printf("A diferença entre %d e %d é %d\n", a, b, diferenca);
+
+    return 0;
+}
+
+3. Multiplicação
+
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 5;
+    int produto = a * b;
+
+    printf("O produto de %d e %d é %d\n", a, b, produto);
+
+    return 0;
+}
+
+4. Divisão
+
+#include <stdio.h>
+
+int main() {
+    int a = 20;
+    int b = 4;
+    int quociente = a / b;
+
+    printf("O quociente de %d dividido por %d é %d\n", a, b, quociente);
+
+    return 0;
+}
+
+5. Módulo (Resto da Divisão)
+
+#include <stdio.h>
+
+int main() {
+    int a = 20;
+    int b = 3;
+    int resto = a % b;
+
+    printf("O resto de %d dividido por %d é %d\n", a, b, resto);
+
+    return 0;
+}
+
+Cálculos com Números de Ponto Flutuante
+Quando você trabalha com números de ponto flutuante, use variáveis do tipo float ou double e o operador de divisão /.
+Exemplo com float
+
+#include <stdio.h>
+
+int main() {
+    float a = 20.5;
+    float b = 4.0;
+    float resultado = a / b;
+
+    printf("O resultado de %.2f dividido por %.2f é %.2f\n", a, b, resultado);
+
+    return 0;
+}
+Exemplo com double
+
+#include <stdio.h>
+
+int main() {
+    double a = 20.5;
+    double b = 4.0;
+    double resultado = a / b;
+
+    printf("O resultado de %.2lf dividido por %.2lf é %.2lf\n", a, b, resultado);
+
+    return 0;
+}
+
+Ordem das Operações
+C segue a ordem padrão das operações matemáticas (PEMDAS/BODMAS):
+Parênteses ()
+Exponenciação (não há um operador padrão para exponenciação em C, mas você pode usar a função pow da biblioteca math.h)
+Multiplicação * e Divisão /
+Adição + e Subtração -
+
+Exemplo com Múltiplas Operações
+
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 20;
+    int c = 5;
+    int resultado = (a + b) * c;
+
+    printf("O resultado de (%d + %d) * %d é %d\n", a, b, c, resultado);
+
+    return 0;
+}
+
+Funções Matemáticas
+Para cálculos mais complexos, você pode usar funções matemáticas da biblioteca math.h. Por exemplo:
+pow(x, y): Calcula x 
+y
+ 
+sqrt(x): Calcula a raiz quadrada de x
+sin(x), cos(x), tan(x): Funções trigonométricas
+
+Exemplo com Funções Matemáticas
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double base = 2.0;
+    double expoente = 3.0;
+    double resultado = pow(base, expoente);
+
+    printf("O resultado de %.2lf elevado a %.2lf é %.2lf\n", base, expoente, resultado);
+
+    return 0;
+}
+
+Conclusão
+Realizar cálculos em C é simples e direto. Você pode usar operadores aritméticos para operações básicas e funções matemáticas para cálculos mais complexos.
+ Lembre-se de seguir a ordem das operações e de usar tipos de dados apropriados para suas variáveis.
