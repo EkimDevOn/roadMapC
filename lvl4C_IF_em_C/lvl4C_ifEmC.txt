@@ -1,0 +1,329 @@
+
+
+                                    Comando if em C
+
+
+
+O comando if em C é usado para executar um bloco de código apenas se uma condição específica for verdadeira.
+ É uma das estruturas de controle de fluxo mais básicas e úteis em qualquer linguagem de programação.
+Sintaxe do if
+
+A sintaxe do comando if em C é a seguinte:
+
+if (condição) {
+    // Bloco de código a ser executado se a condição for verdadeira
+}
+
+Componentes
+if: Palavra-chave que inicia a estrutura de controle.
+condição: Uma expressão que é avaliada como verdadeira (true) ou falsa (false). Se a condição for verdadeira, 
+o bloco de código dentro das chaves {} será executado.
+Bloco de código: O código que será executado se a condição for verdadeira. Pode conter uma ou mais instruções.
+
+Exemplo Básico
+Vamos criar um exemplo simples que verifica se um número é positivo:
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+
+    if (numero > 0) {
+        printf("O número %d é positivo.\n", numero);
+    }
+
+    return 0;
+}
+
+Saída
+Se o usuário digitar 5, a saída será:
+
+Digite um número: 5
+O número 5 é positivo.
+
+Se o usuário digitar -3, não haverá saída adicional, pois a condição numero > 0 não será verdadeira.
+Condições Compostas
+
+Você pode usar operadores lógicos para criar condições compostas:
+
+&& (AND): Ambas as condições devem ser verdadeiras.
+|| (OR): Pelo menos uma das condições deve ser verdadeira.
+! (NOT): Inverte o valor da condição.
+
+Exemplo com Condições Compostas
+Vamos criar um exemplo que verifica se um número está entre 1 e 10:
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+
+    if (numero >= 1 && numero <= 10) {
+        printf("O número %d está entre 1 e 10.\n", numero);
+    }
+
+    return 0;
+}
+
+Saída
+Se o usuário digitar 7, a saída será:
+
+Digite um número: 7
+O número 7 está entre 1 e 10.
+
+Se o usuário digitar 15, não haverá saída adicional, pois a condição numero >= 1 && numero <= 10 não será verdadeira.
+
+if com else
+Você também pode usar o comando else para executar um bloco de código se a condição do if for falsa:
+
+if (condição) {
+    // Bloco de código a ser executado se a condição for verdadeira
+} else {
+    // Bloco de código a ser executado se a condição for falsa
+}
+
+Exemplo com else
+Vamos criar um exemplo que verifica se um número é positivo ou não:
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+
+    if (numero > 0) {
+        printf("O número %d é positivo.\n", numero);
+    } else {
+        printf("O número %d não é positivo.\n", numero);
+    }
+
+    return 0;
+}
+
+Saída
+Se o usuário digitar 5, a saída será:
+
+
+Digite um número: 5
+O número 5 é positivo.
+
+Se o usuário digitar -3, a saída será:
+Digite um número: -3
+
+O número -3 não é positivo.
+
+if com else if
+Você pode usar else if para verificar múltiplas condições:
+
+if (condição1) {
+    // Bloco de código a ser executado se condição1 for verdadeira
+} else if (condição2) {
+    // Bloco de código a ser executado se condição2 for verdadeira
+} else {
+    // Bloco de código a ser executado se nenhuma condição for verdadeira
+}
+
+Exemplo com else if
+Vamos criar um exemplo que verifica se um número é positivo, negativo ou zero:
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+
+    if (numero > 0) {
+        printf("O número %d é positivo.\n", numero);
+    } else if (numero < 0) {
+        printf("O número %d é negativo.\n", numero);
+    } else {
+        printf("O número é zero.\n");
+    }
+
+    return 0;
+}
+
+Saída
+Se o usuário digitar 5, a saída será:
+
+Digite um número: 5
+O número 5 é positivo.
+
+Se o usuário digitar -3, a saída será:
+
+Digite um número: -3
+O número -3 é negativo.
+
+Se o usuário digitar 0, a saída será:
+
+Digite um número: 0
+O número é zero.
+
+Conclusão
+O comando if em C permite que você execute código condicionalmente, baseado em uma condição.
+ Você pode usar else para lidar com o caso onde a condição é falsa e else if para verificar múltiplas condições. 
+ Isso torna o if uma ferramenta poderosa para controlar o fluxo de seu programa.
+
+
+
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+                            SWITCH-CASE
+
+
+                O comando switch-case em C é uma estrutura de controle de fluxo que permite executar diferentes blocos de código
+ com base no valor de uma variável. É especialmente útil quando você precisa verificar o valor de uma variável contra várias opções.
+Sintaxe do switch-case
+
+A sintaxe do switch-case em C é a seguinte:
+
+switch (expressão) {
+    case valor1:
+        // Bloco de código a ser executado se expressão == valor1
+        break;
+    case valor2:
+        // Bloco de código a ser executado se expressão == valor2
+        break;
+    // Mais cases podem ser adicionados
+    default:
+        // Bloco de código a ser executado se nenhum case for verdadeiro
+}
+
+Componentes
+
+switch: Palavra-chave que inicia a estrutura de controle.
+
+expressão: Uma expressão que é avaliada e comparada com os valores dos case.
+
+case valor:: Especifica um valor a ser comparado com a expressão. Se a expressão for igual ao valor,
+ o bloco de código correspondente será executado.
+
+break: Termina a execução do switch após executar o bloco de código de um case. Sem break,
+ o código continuará executando os blocos subsequentes.
+
+default: Bloco de código a ser executado se nenhum dos valores dos case for igual à expressão. O default é opcional.
+
+Exemplo Básico
+
+Vamos criar um exemplo que verifica o dia da semana com base em um número de 1 a 7:
+
+#include <stdio.h>
+
+int main() {
+    int dia;
+
+    printf("Digite um número de 1 a 7: ");
+    scanf("%d", &dia);
+
+    switch (dia) {
+        case 1:
+            printf("Domingo\n");
+            break;
+        case 2:
+            printf("Segunda-feira\n");
+            break;
+        case 3:
+            printf("Terça-feira\n");
+            break;
+        case 4:
+            printf("Quarta-feira\n");
+            break;
+        case 5:
+            printf("Quinta-feira\n");
+            break;
+        case 6:
+            printf("Sexta-feira\n");
+            break;
+        case 7:
+            printf("Sábado\n");
+            break;
+        default:
+            printf("Número inválido\n");
+    }
+
+    return 0;
+}
+
+Saída
+
+Se o usuário digitar 3, a saída será:
+Digite um número de 1 a 7: 3
+
+Terça-feira
+Se o usuário digitar 9, a saída será:
+
+Digite um número de 1 a 7: 9
+Número inválido
+
+
+Exemplo com Múltiplos case
+
+Você pode agrupar múltiplos case para executar o mesmo bloco de código para diferentes valores:
+
+
+#include <stdio.h>
+
+int main() {
+    int nota;
+
+    printf("Digite uma nota de 0 a 10: ");
+    scanf("%d", &nota);
+
+    switch (nota) {
+        case 9:
+        case 10:
+            printf("Aprovado com Distinção\n");
+            break;
+        case 7:
+        case 8:
+            printf("Aprovado\n");
+            break;
+        case 5:
+        case 6:
+            printf("Recuperação\n");
+            break;
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            printf("Reprovado\n");
+            break;
+        default:
+            printf("Nota inválida\n");
+    }
+
+    return 0;
+}
+
+Saída
+
+Se o usuário digitar 8, a saída será:
+
+Digite uma nota de 0 a 10: 8
+Aprovado
+
+Se o usuário digitar 11, a saída será:
+Digite uma nota de 0 a 10: 11
+Nota inválida
+
+
+Importância do break
+O break é crucial para evitar a execução de múltiplos blocos de código. Sem break,
+ o código continuará executando os blocos subsequentes, o que pode levar a resultados inesperados.
+ 
+Conclusão
+O comando switch-case em C é uma maneira eficiente de executar blocos de código com base
+ no valor de uma variável. Ele é especialmente útil quando você precisa verificar uma variável contra várias opções. Lembre-se de usar break para evitar a execução
+ de múltiplos blocos e de incluir um default para lidar com casos não previstos.
