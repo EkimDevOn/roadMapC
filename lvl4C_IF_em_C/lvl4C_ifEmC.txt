@@ -322,8 +322,188 @@ Nota inválida
 Importância do break
 O break é crucial para evitar a execução de múltiplos blocos de código. Sem break,
  o código continuará executando os blocos subsequentes, o que pode levar a resultados inesperados.
- 
+
 Conclusão
 O comando switch-case em C é uma maneira eficiente de executar blocos de código com base
  no valor de uma variável. Ele é especialmente útil quando você precisa verificar uma variável contra várias opções. Lembre-se de usar break para evitar a execução
  de múltiplos blocos e de incluir um default para lidar com casos não previstos.
+
+
+
+
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+                                                    while
+
+
+O comando while em C é uma estrutura de controle de fluxo usada para repetir um bloco de código enquanto uma condição
+ específica for verdadeira. É uma das formas de implementar loops em C.
+
+Sintaxe do while
+A sintaxe do comando while é a seguinte:
+
+while (condição) {
+    // Bloco de código a ser executado enquanto a condição for verdadeira
+}
+
+Componentes
+
+while: Palavra-chave que inicia a estrutura de controle.
+condição: Uma expressão que é avaliada antes de cada iteração do loop. Se a condição for verdadeira (true),
+ o bloco de código dentro das chaves {} será executado. Se a condição for falsa (false), o loop será interrompido
+  e o programa continuará a execução após o bloco while.
+Bloco de código: O código que será executado repetidamente enquanto a condição for verdadeira.
+
+Exemplo Básico
+Vamos criar um exemplo que imprime os números de 1 a 5 usando um loop while:
+
+#include <stdio.h>
+
+int main() {
+    int contador = 1; // Inicializa o contador
+
+    while (contador <= 5) { // Condição: enquanto contador for menor ou igual a 5
+        printf("%d\n", contador); // Imprime o valor do contador
+        contador++; // Incrementa o contador
+    }
+
+    return 0;
+}
+
+Saída
+
+1
+2
+3
+4
+5
+
+
+Exemplo com Condição de Parada
+Vamos criar um exemplo que solicita ao usuário números até que ele digite um número negativo:
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Digite números positivos (digite um número negativo para sair):\n");
+
+    while (1) { // Loop infinito
+        scanf("%d", &numero); // Lê um número do usuário
+
+        if (numero < 0) { // Condição de parada
+            printf("Número negativo digitado. Saindo do loop.\n");
+            break; // Sai do loop
+        }
+
+        printf("Número digitado: %d\n", numero);
+    }
+
+    return 0;
+}
+
+Saída
+
+Digite números positivos (digite um número negativo para sair):
+10
+Número digitado: 10
+20
+Número digitado: 20
+-1
+Número negativo digitado. Saindo do loop.
+
+
+Loop Infinito com while
+Você pode criar um loop infinito usando while (1) ou while (true).
+ Isso é útil quando você precisa de um loop que só será interrompido por uma condição específica dentro do bloco de código.
+
+Exemplo de Loop Infinito
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Digite números positivos (digite um número negativo para sair):\n");
+
+    while (1) { // Loop infinito
+        scanf("%d", &numero);
+
+        if (numero < 0) {
+            printf("Número negativo digitado. Saindo do loop.\n");
+            break; // Sai do loop
+        }
+
+        printf("Número digitado: %d\n", numero);
+    }
+
+    return 0;
+}
+
+Conclusão
+O comando while em C permite que você repita um bloco de código enquanto uma condição for verdadeira.
+ É útil para situações onde você não sabe de antemão quantas vezes o loop deve ser executado. Lembre-se de incluir uma
+ condição de parada para evitar loops infinitos, a menos que isso seja intencional.
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+                                        do-while
+
+
+
+Em C, o laço de repetição do-while é uma estrutura de controle que permite executar um bloco de código pelo menos uma vez e,
+ em seguida, repeti-lo enquanto uma condição específica for verdadeira. A sintaxe básica do do-while é a seguinte:
+
+do {
+    // Bloco de código a ser executado
+} while (condição);
+
+
+Aqui está um exemplo simples para ilustrar como funciona o do-while:
+
+#include <stdio.h>
+
+int main() {
+    int numero = 0;
+
+    do {
+        printf("Digite um número maior que 0: ");
+        scanf("%d", &numero);
+
+        if (numero <= 0) {
+            printf("Número inválido. Tente novamente.\n");
+        }
+    } while (numero <= 0);
+
+    printf("Número válido digitado: %d\n", numero);
+
+    return 0;
+}
+
+Neste exemplo:
+O bloco de código dentro do do é executado pelo menos uma vez.
+
+Em seguida, a condição numero <= 0 é verificada.
+
+Se a condição for verdadeira, o bloco de código dentro do do é executado novamente.
+
+Isso continua até que a condição se torne falsa (ou seja, numero > 0).
+
+O do-while é útil quando você deseja garantir que o bloco de código seja executado pelo menos uma vez,
+ independentemente da condição inicial.
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Comando FOR similar ao while 
+
+#inicialização, condição e atualização
+
+Diferença crucial:
+
+#Sintaxe mais complexa
+#Tudo fica  embutido no comando
