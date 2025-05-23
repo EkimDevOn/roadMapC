@@ -13,18 +13,18 @@ int main() {
 
     system("pause");
 
-    printf("Número com largura de campo 5: %5d.\n", numero);
+    printf("\nNúmero com largura de campo 5: %5d.\n", numero);
     printf("Número com largura 5 e alinhamento á esquerda: %-5d.\n", numero);
 
-    system("pause");
+    system("\npause");
 
-    printf("Pi com 2 casas decimasis: %.2f\n", pi);
+    printf("\nPi com 2 casas decimasis: %.2f\n", pi);
     printf("Pi com 5 casas decimais %.5f", pi);
 
-    system("pause");
+    system("\npause");
 
     //Printf()
-    printf("Nova linha: \n");
+    printf("\nNova linha: \n");
     printf("Tabulação horizontal: \t");
     printf("Retorno de carro: \r");
     printf("Backspace: \b");
@@ -36,7 +36,7 @@ int main() {
     printf("Interrogação: \?");
     printf("Alerta: \a");
 
-    system("pause");
+    system("\npause");
 
     return 0;
 }
