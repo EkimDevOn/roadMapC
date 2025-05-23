@@ -1,0 +1,139 @@
+
+                                    vetores
+
+
+Em C, os vetores (também conhecidos como arrays) são estruturas de dados que permitem armazenar múltiplos valores do mesmo tipo
+ em uma única variável. Eles são muito úteis para organizar e manipular coleções de dados de maneira eficiente.
+  Vou explicar como declarar, inicializar e manipular vetores em C com exemplos.
+
+Declaração de Vetores
+Para declarar um vetor em C, você precisa especificar o tipo de dados dos elementos e o tamanho do vetor (número de elementos).
+
+tipo nome[tamanho];
+Exemplo
+
+int numeros[5]; // Declara um vetor de 5 inteiros
+Inicialização de Vetores
+Você pode inicializar um vetor na declaração ou depois de declará-lo.
+Inicialização na Declaração
+
+int numeros[5] = {1, 2, 3, 4, 5}; // Inicializa com valores específicos
+Inicialização após a Declaração
+
+int numeros[5];
+numeros[0] = 1;
+numeros[1] = 2;
+numeros[2] = 3;
+numeros[3] = 4;
+numeros[4] = 5;
+
+Acesso a Elementos de Vetor
+Você pode acessar e modificar elementos de um vetor usando índices. Os índices começam em 0 e vão até tamanho - 1.
+Exemplo
+
+int numeros[5] = {1, 2, 3, 4, 5};
+printf("O segundo elemento é: %d\n", numeros[1]); // Acessa o segundo elemento (índice 1)
+numeros[1] = 10; // Modifica o segundo elemento
+printf("O segundo elemento agora é: %d\n", numeros[1]);
+Tamanho de um Vetor
+
+O tamanho de um vetor é fixo e deve ser conhecido em tempo de compilação. Você pode determinar o tamanho de um vetor usando sizeof.
+Exemplo
+
+int numeros[5];
+int tamanho = sizeof(numeros) / sizeof(numeros[0]);
+printf("Tamanho do vetor: %d\n", tamanho);
+
+Iteração em Vetores
+Você pode iterar sobre os elementos de um vetor usando loops, como for ou while.
+Exemplo com for
+
+int numeros[5] = {1, 2, 3, 4, 5};
+for (int i = 0; i < 5; i++) {
+    printf("Elemento %d: %d\n", i, numeros[i]);
+}
+Exemplo com while
+
+int numeros[5] = {1, 2, 3, 4, 5};
+int i = 0;
+while (i < 5) {
+    printf("Elemento %d: %d\n", i, numeros[i]);
+    i++;
+}
+
+Vetores Multidimensionais
+Você também pode criar vetores multidimensionais (matrizes).
+
+Exemplo de Matriz 2D
+
+int matriz[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 3; j++) {
+        printf("Elemento [%d][%d]: %d\n", i, j, matriz[i][j]);
+    }
+}
+
+Exemplo Completo
+Aqui está um exemplo completo que demonstra a declaração, inicialização, acesso e iteração de vetores em C:
+
+#include <stdio.h>
+
+int main() {
+    // Declaração e inicialização de um vetor
+    int numeros[5] = {10, 20, 30, 40, 50};
+
+    // Acesso e modificação de um elemento
+    printf("O segundo elemento é: %d\n", numeros[1]); // Acessa o segundo elemento (índice 1)
+    numeros[1] = 25; // Modifica o segundo elemento
+    printf("O segundo elemento agora é: %d\n", numeros[1]);
+
+    // Iteração sobre os elementos do vetor
+    printf("Elementos do vetor:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Elemento %d: %d\n", i, numeros[i]);
+    }
+
+    // Vetor multidimensional (matriz 2D)
+    int matriz[2][3] = {
+        {1, 2, 3},
+        {4, 5, 6}
+    };
+
+    printf("Elementos da matriz:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("Elemento [%d][%d]: %d\n", i, j, matriz[i][j]);
+        }
+    }
+
+    return 0;
+}
+
+Saída do Programa
+
+O segundo elemento é: 20
+O segundo elemento agora é: 25
+Elementos do vetor:
+Elemento 0: 10
+Elemento 1: 25
+Elemento 2: 30
+Elemento 3: 40
+Elemento 4: 50
+Elementos da matriz:
+Elemento [0][0]: 1
+Elemento [0][1]: 2
+Elemento [0][2]: 3
+Elemento [1][0]: 4
+Elemento [1][1]: 5
+Elemento [1][2]: 6
+
+Observações Importantes
+Tamanho Fixo: O tamanho de um vetor em C é fixo e deve ser conhecido em tempo de compilação.
+
+Índices: Os índices dos vetores começam em 0 e vão até tamanho - 1.
+
+Memória: Vetores são armazenados em memória contígua, o que permite acesso rápido e eficiente aos elementos.
