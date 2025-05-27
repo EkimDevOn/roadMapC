@@ -28,7 +28,6 @@ for (int i = 0; ; i++) {
     printf("%d\n", i);
     if (i >= 5) break; // Para o loop após 5 iterações
 }
-}
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
